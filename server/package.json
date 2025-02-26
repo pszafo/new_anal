@@ -1,0 +1,14 @@
+{
+  "name": "zafo-analytics-tool-server",
+  "version": "1.0.0",
+  "description": "Backend for Zafo.ai SaaS Analytics Tool",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "openai-api": "^1.0.0"
+  }
+}
