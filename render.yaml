@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: zafo-analytics-client
+    env: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: client/build
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://zafo-analytics-server.onrender.com/api/:splat
+  - type: web
+    name: zafo-analytics-server
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && node index.js
+    envVars:
+      - key: PGUSER
+        value: your_user
+      - key: PGHOST
+        value: localhost
+      - key: PGDATABASE
+        value: your_database_name
+      - key: PGPASSWORD
+        value: your_password
+      - key: PGPORT
+        value: 5432
+      - key: OPENAI_API_KEY
+        value: your_openai_api_key
