@@ -1,9 +1,10 @@
 {
-  "name": "zafo-analytics-tool-client",
+  "name": "new_anal-client",
   "version": "1.0.0",
   "description": "Frontend for Zafo.ai SaaS Analytics Tool",
   "main": "index.js",
   "scripts": {
+    "prestart": "export NODE_OPTIONS=--openssl-legacy-provider",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
