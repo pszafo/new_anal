@@ -7,7 +7,7 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/api/dashboard-data');
+        const response = await axios.get('https://new-anal-server.onrender.com/api/dashboard-data');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching dashboard data', error);
