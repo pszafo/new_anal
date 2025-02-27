@@ -6,8 +6,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use('/api/search', searchRouter);
-app.use('/api/dashboard-data', dashboardRouter);
+  // app.use('/api/search', searchRouter);
+app.use('/api', dashboardRouter);
 
 app.get('/', (req, res) => {
   res.send('Zafo.ai Analytics Tool Backend');
