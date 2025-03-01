@@ -4,7 +4,6 @@ const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
 const dashboardRouter = require('./routes/dashboard');
-const searchRouter = require('./routes/search');
 
 const app = express();
 const port = process.env.PORT || 5000;
