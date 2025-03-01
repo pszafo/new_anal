@@ -12,12 +12,12 @@ const App: React.FC = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Dashboard} />
+        <Route path="/search" exact component={Dashboard} />
         <Route path="/user-tracking" component={UserTracking} />
         <Route path="/churn-analysis" component={ChurnAnalysis} />
         <Route path="/feature-usage" component={FeatureUsage} />
         <Route path="/feature-requests" component={FeatureRequests} />
-        <Route path="/search" component={Search} />
+        <Route path="/" component={Search} />
         <Route component={NotFound} />
       </Switch>
     </Router>
