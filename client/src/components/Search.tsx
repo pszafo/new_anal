@@ -9,7 +9,7 @@ const Search: React.FC = () => {
   const handleSearch = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('/api/search', { query });
+      const response = await axios.post('https://new-anal-server.onrender.com/api/search', { query });
       setResults(response.data);
     } catch (error) {
       console.error('Error performing search', error);
