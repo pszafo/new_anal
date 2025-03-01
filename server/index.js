@@ -1,6 +1,7 @@
 const express = require('express');
 const searchRouter = require('./routes/search');
 const cors = require('cors');
+const path = require('path');
 const bodyParser = require('body-parser');
 const dashboardRouter = require('./routes/dashboard');
 
@@ -13,8 +14,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/api', dashboardRouter);
 
-app.get('/', (req, res) => {
-  res.send('Zafo.ai Analytics Tool Backend');
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../client/public')));
+
+// The "catchall" handler: for any request that doesn't match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/public/index.html'));
 });
 
 app.listen(port, () => {
