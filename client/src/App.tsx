@@ -13,11 +13,11 @@ const App: React.FC = () => {
     <Router>
       <Switch>
         <Route path="/" exact component={Dashboard} />
-        <Route path="/user-tracking" exact component={UserTracking} />
+        <Route path="/user-tracking" component={UserTracking} />
         <Route path="/churn-analysis" component={ChurnAnalysis} />
         <Route path="/feature-usage" component={FeatureUsage} />
         <Route path="/feature-requests" component={FeatureRequests} />
-        <Route path="/search" exact component={Search} />
+        <Route path="/search" component={Search} />
         <Route component={NotFound} />
       </Switch>
     </Router>
